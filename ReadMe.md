@@ -7,7 +7,7 @@
 Welcome to [Flipper Zero](https://flipperzero.one/)'s Firmware repo!
 Our goal is to create nice and clean code with good documentation, to make it a pleasure for everyone to work with.
 
-# Update firmware
+## Update firmware
 
 [Get Latest Firmware from Update Server](https://update.flipperzero.one/)
 
@@ -41,19 +41,20 @@ Prerequisites:
 
 One liner: `make flash_radio`
 
-## With USB DFU 
+## With USB DFU
 
 1. Download latest [Firmware](https://update.flipperzero.one)
 
 2. Reboot Flipper to Bootloader
- - Press and hold `← Left` + `↩ Back` for reset 
- - Release `↩ Back` and keep holding `← Left` until blue LED lights up
- - Release `← Left`
+
+- Press and hold `← Left` + `↩ Back` for reset
+- Release `↩ Back` and keep holding `← Left` until blue LED lights up
+- Release `← Left`
 <!-- ![Switch to DFU sequence](https://habrastorage.org/webt/uu/c3/g2/uuc3g2n36f2sju19rskcvjzjf6w.png) -->
 
-3. Run `dfu-util -D full.dfu -a 0`
+1. Run `dfu-util -D full.dfu -a 0`
 
-# Build with Docker
+## Build with Docker
 
 ## Prerequisites
 
@@ -64,7 +65,7 @@ One liner: `make flash_radio`
  docker-compose up -d
  ```
 
-## Compile everything
+## Compile everything with Docker
 
 ```sh
 docker-compose exec dev make
@@ -74,11 +75,12 @@ Check `dist/` for build outputs.
 
 Use **`flipper-z-{target}-full-{suffix}.dfu`** to flash your device.
 
-# Build on Linux/macOS
+## Build on Linux/macOS
 
 ## macOS Prerequisites
 
 Make sure you have [brew](https://brew.sh) and install all the dependencies:
+
 ```sh
 brew bundle --verbose
 ```
@@ -108,6 +110,7 @@ for file in /opt/$toolchain/bin/* ; do ln -s "${file}" "/usr/bin/$(basename ${fi
 - protobuf (compiling proto sources)
 
 For example, to install them on Debian, use:
+
 ```sh
 apt update
 apt install openocd clang-format-13 dfu-util protobuf-compiler
@@ -128,18 +131,19 @@ Use **`flipper-z-{target}-full-{suffix}.dfu`** to flash your device.
 ## Flash everything
 
 Connect your device via ST-Link and run:
+
 ```sh
 make whole
 ```
 
-# Links
+## Links
 
-* Discord: [flipp.dev/discord](https://flipp.dev/discord)
-* Website: [flipperzero.one](https://flipperzero.one)
-* Kickstarter page: [kickstarter.com](https://www.kickstarter.com/projects/flipper-devices/flipper-zero-tamagochi-for-hackers)
-* Forum: [forum.flipperzero.one](https://forum.flipperzero.one/)
+- Discord: [flipp.dev/discord](https://flipp.dev/discord)
+- Website: [flipperzero.one](https://flipperzero.one)
+- Kickstarter page: [kickstarter.com](https://www.kickstarter.com/projects/flipper-devices/flipper-zero-tamagochi-for-hackers)
+- Forum: [forum.flipperzero.one](https://forum.flipperzero.one/)
 
-# Project structure
+## Project structure
 
 - `applications`    - Applications and services used in firmware
 - `assets`          - Assets used by applications and services
